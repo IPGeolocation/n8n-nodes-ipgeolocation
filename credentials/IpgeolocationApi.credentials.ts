@@ -10,7 +10,7 @@ export class IpgeolocationApi implements ICredentialType {
 	name = 'ipgeolocationApi';
 
 	displayName = 'IPGeolocation API';
-	icon: Icon = { light: 'file:../nodes/Ipgeolocation/ipgeolocation-light.png', dark: 'file:../nodes/Ipgeolocation/ipgeolocation-dark.png' };
+	icon: Icon = { light: 'file:../nodes/Ipgeolocation/ipgeolocation-light.svg', dark: 'file:../nodes/Ipgeolocation/ipgeolocation-dark.svg' };
 	// Link to your community node's README
 	documentationUrl = 'https://github.com/IPGeolocation/n8n-nodes-ipgeolocation?tab=readme-ov-file#api-key--connection-setup';
 
