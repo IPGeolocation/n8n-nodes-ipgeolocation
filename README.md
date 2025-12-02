@@ -16,7 +16,7 @@ It allows you to automate retrieval of:
 ---
 ## API Key & Connection Setup
 
-To use IPGeolocation.io with **Make**, you need a valid **API Key**. Follow these steps carefully:
+To use IPGeolocation.io with **n8n**, you need a valid **API Key**. Follow these steps carefully:
 
 ### Create or log in to your IPGeolocation.io account
 
