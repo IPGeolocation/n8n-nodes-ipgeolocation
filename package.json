@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-ipgeolocation",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Integrate ipgeolocation.io with n8n to automate IP lookup, geolocation, timezone data, and security checks for powerful workflow enrichment.",
   "license": "MIT",
   "homepage": "",
