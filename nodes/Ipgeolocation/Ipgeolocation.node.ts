@@ -14,7 +14,7 @@ export class Ipgeolocation implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'IPGeolocation',
 		name: 'ipgeolocation',
-		icon: { light: 'file:ipgeolocation-light.png', dark: 'file:ipgeolocation-dark.png' },
+		icon: { light: 'file:ipgeolocation-light.svg', dark: 'file:ipgeolocation-dark.svg' },
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"]}}',
