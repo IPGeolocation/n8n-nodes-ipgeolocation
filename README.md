@@ -20,13 +20,13 @@ To use IPGeolocation.io with **n8n**, you need a valid **API Key**. Follow these
 
 ### Create or log in to your IPGeolocation.io account
 
-- Go to [IPGeolocation.io](https://ipgeolocation.io/).
+- Go to [**IPGeolocation.io**](https://ipgeolocation.io/).
 - If you don’t have an account, click [**Sign Up**](https://app.ipgeolocation.io/signup) and complete the registration.
 - If you already have an account, click [**Sign in**](https://app.ipgeolocation.io/login) and enter your credentials.
 
 ### Obtain your API Key
 
-- After logging in, go to your [dashboard](https://app.ipgeolocation.io/dashboard).
+- After logging in, go to your [**dashboard**](https://app.ipgeolocation.io/dashboard).
 - Copy your **API Key** — you’ll need it to connect Make with IPGeolocation.io.
 
 ### Open Make and create a scenario
