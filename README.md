@@ -183,14 +183,14 @@ Below is a structured reference of all modules in this integration.
 
 ### **Geolocation**
 
-**1. Get IP Geolocation**
+#### **Get IP Geolocation**
 
 Retrieves full geolocation data of a single IPv4/IPv6.
 
 - **Input:** IP Address
 - **Outputs:** country_name, city, latitude, longitude and [many more](https://ipgeolocation.io/ip-location-api.html#2-location-json-object-reference)
 
-**2. Get Bulk IP Geolocation**
+#### **Get Bulk IP Geolocation**
 
 Retrieves geolocation for up to 50,000 IPs per request.
 
@@ -201,14 +201,14 @@ Retrieves geolocation for up to 50,000 IPs per request.
 
 ### **Security**
 
-**3. IP Security Lookup**
+#### **IP Security Lookup**
 
 Security insights such as proxy, VPN, TOR, threat score, cloud and proxy providers.
 
 - **Input:** IP Address
 - **Outputs:** security.is_proxy, security.is_vpn, security.threat_score, security.is_cloud_provider and [more](https://ipgeolocation.io/ip-security-api.html#2-security-json-object-reference)
 
-**4. Bulk IP Security Lookup**
+#### **Bulk IP Security Lookup**
 
 Security assessment for multiple IPs.
 
@@ -219,7 +219,7 @@ Security assessment for multiple IPs.
 
 ### **Network Intelligence**
 
-**5. Lookup ASN**
+#### **Lookup ASN**
 
 Provides a simple way to retrieve accurate information about an Autonomous System Number (ASN) and its associated IPv4 and IPv6 address ranges.
 
@@ -228,7 +228,7 @@ Provides a simple way to retrieve accurate information about an Autonomous Syste
 
 ![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/asn.png)
 
-**6. Lookup Abuse Contact Information**
+#### **Lookup Abuse Contact Information**
 
 Includes details such as the role, handle, organization name, kind (e.g., group or individual), and postal address. This information helps identify the entity responsible for handling abuse reports.
 
@@ -241,7 +241,7 @@ Includes details such as the role, handle, organization name, kind (e.g., group 
 
 Free **Timezone API** and **Time conversion API** provides date and time related information such as current time, date in various formats, week, month, year, time in unix timestamp, UTC/GMT offset and day light saving time from timezone name, any IPv4 or IPv6 address or geolocation coordinates, IATA code, ICAO code, or UN/LOCODE.
 
-**7. Get Timezone Info**
+#### **Get Timezone Info**
 
 It can be consumed with the following input variations:
 
@@ -256,7 +256,7 @@ It can be consumed with the following input variations:
 
 ![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/timezone.png)
 
-**8. Time Conversion**
+#### **Time Conversion**
 
 Converts a time from one of following options
 
@@ -275,13 +275,13 @@ Converts a time from one of following options
 
 Provides timings for sunrise, sunset, moonrise, moonset, sun azimuth, moon azimuth, sun altitude, moon altitude, sun distance from the earth and moon distance from the earth.
 
-**9. Get Astronomy Details**
+#### **Get Astronomy Details**
 
 - **Outputs:** astronomy.sunrise, astronomy.sunset, astronomy.moon_phase and [many more.](https://ipgeolocation.io/astronomy-api.html#reference-to-astronomy-api-response)
 
 ![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/astronomy.png)
 
-**10. Astronomy Time Series Lookup**
+#### **Astronomy Time Series Lookup**
 
 - **Outputs:** Daily astronomy data for a defined date range.
 
@@ -291,14 +291,15 @@ Provides timings for sunrise, sunset, moonrise, moonset, sun azimuth, moon azimu
 
 Provides detailed client system information, allowing for the detection of bots, crawlers, and potential attackers.
 
-**11. Parse User Agent String**
+#### **Parse User Agent String**
 
 - **Input:** User agent string
 - **Outputs:** provides name, device and operating sysem [information](https://ipgeolocation.io/user-agent-api.html#reference-to-user-agent-api-response).
 
 ![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/user-agent.png)
 
-1. **Parse Bulk User Agent Strings**
+#### **Parse Bulk User Agent Strings**
+
 - **Input:** Array of User agent strings
 - **Outputs:** Collection of parsed user agent objects
 
