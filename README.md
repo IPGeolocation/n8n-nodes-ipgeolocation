@@ -29,7 +29,7 @@ To use IPGeolocation.io with **n8n**, you need a valid **API Key**. Follow these
 - After logging in, go to your [**dashboard**](https://app.ipgeolocation.io/dashboard).
 - Copy your **API Key** — you’ll need it to connect Make with IPGeolocation.io.
 
-### Open Make and create a scenario
+### Open n8n and create a scenario
 
 - Go to [n8n](https://n8n.io/) and log in or sign up.
 - Click + from your sidebar and create a new workflow from scratch.
