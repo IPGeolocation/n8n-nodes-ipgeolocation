@@ -2,7 +2,7 @@
 
 The n8n+IPGeolocation integration makes it simple to use the full [**IPGeolocation.io**](https://ipgeolocation.io) APIs inside your n8n automation workflows. You do not need to write code or handle API requests because everything can be automated through clear and simple actions.
 
-With this integration, you can quickly get helpful information about any IP address. This includes location details, network ownership, security risk information, user agent data, time zone details, and even basic astronomy information. You can use this data to improve your workflows, personalize user experiences, and make your automations more secure.
+With this integration, you can quickly get helpful information about any IP address. This includes location details, network ownership, security risk information, user agent data, time zone details, and even basic astronomy information. You can use this data to improve your workflows, personalize user experiences, and make your automation more secure.
 
 It allows you to automate retrieval of:
 
@@ -14,6 +14,87 @@ It allows you to automate retrieval of:
 - User agent details including browser, operating system, and device type
 
 ---
+
+## IPGeolocation Node Installation Guide 
+### Community Nodes (Recommended)
+For users on n8n v0.187+, your instance owner can install this node from Community Nodes.
+
+1. Go to **Settings > Community Nodes**.
+2. Select **Install**.
+3. Enter `n8n-nodes-ipgeolocation` in Enter npm package name.
+4. Agree to the risks of using community nodes: select I understand the risks of installing unverified code from a public source.
+5. Select **Install**.
+
+### Manual Installation
+
+It explains how to install and use the **official
+`n8n-nodes-ipgeolocation` package**, developed and maintained by
+**[IPGeolocation.io](https://ipgeolocation.io)**.\
+Follow the steps below to integrate our IP Geolocation capabilities
+directly into your n8n workflows.
+
+#### Start n8n Once (to generate the .n8n folder)
+
+``` bash
+npx n8n
+```
+
+After it opens, close it. This ensures the `.n8n` directory is
+generated.
+
+
+#### Navigate to the n8n configuration directory
+
+``` bash
+cd ~/.n8n
+```
+
+#### Create a directory for custom nodes
+
+``` bash
+mkdir custom
+cd custom
+```
+
+#### Initialize npm inside the custom folder
+
+``` bash
+npm init -y
+```
+
+#### Install the official IPGeolocation.io n8n node
+
+``` bash
+npm install n8n-nodes-ipgeolocation@1.0.0
+```
+
+This [npm package](https://www.npmjs.com/package/n8n-nodes-ipgeolocation) is the official IPGeolocation.io integration for n8n,
+enabling powerful IP lookup, timezone, geolocation, and security data
+directly inside your workflows.
+
+#### Restart n8n
+
+After the installation, restart your n8n instance using:
+
+``` bash
+npx n8n
+```
+
+n8n will automatically load all custom nodes located in the
+`.n8n/custom` folder, including the **IPGeolocation.io** node.
+
+
+#### You're Ready to Go!
+
+You can now use the **IPGeolocation.io** node inside n8n to:
+
+-   Retrieve IP Geolocation data
+-   Detect timezone information
+-   Perform IP Security checks
+-   Enrich workflows with location-based intelligence
+
+---
+
 ## API Key & Connection Setup
 
 To use IPGeolocation.io with **n8n**, you need a valid **API Key**. Follow these steps carefully:
@@ -29,14 +110,14 @@ To use IPGeolocation.io with **n8n**, you need a valid **API Key**. Follow these
 - After logging in, go to your [**dashboard**](https://app.ipgeolocation.io/dashboard).
 - Copy your **API Key** — you’ll need it to connect Make with IPGeolocation.io.
 
-### Open Make and create a scenario
+### Open n8n and create a scenario
 
-- Go to [n8n](https://n8n.io/) and log in or sign up.
+- Go to [n8n instance](https://n8n.io/) and log in or sign up.
 - Click + from your sidebar and create a new workflow from scratch.
 - You will see a canvas where you can add nodes.
 
 ### Add an IPGeolocation node
-
+- Make sure you have the **IPGeolocation.io** node installed.
 - Click the **+** button to add a node.
 - Search for **IPGeolocation** in the nodes search bar.
 
