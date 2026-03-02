@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "@n8n/node-cli": "*",
+    "@opentelemetry/instrumentation": "^0.212.0",
     "eslint": "9.32.0",
     "prettier": "3.6.2",
     "release-it": "^19.0.4",
