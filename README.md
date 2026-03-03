@@ -256,7 +256,7 @@ Provides a simple way to retrieve accurate information about an Autonomous Syste
 Includes details such as the role, handle, organization name, kind (e.g., group or individual), and postal address. This information helps identify the entity responsible for handling abuse reports.
 
 - **Input:** IP Address
-- **Outputs:** abuse.emails, abuse.handle and [more](https://ipgeolocation.io/ip-abuse-contact-api.html#reference-to-abuse-contact-api-response)
+- **Outputs:** abuse.emails, abuse.kind and [more](https://ipgeolocation.io/documentation/ip-abuse-contact-api.html#reference-to-abuse-contact-api-response)
 
 ![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/abuse-v3.png)
 
@@ -275,7 +275,7 @@ It can be consumed with the following input variations:
 - For any IATA code
 - For any ICAO code
 - For any UN/LO Code
-- **Outputs:** time_zone.name, time_zone.current_time, time_zone.date_time_wti and [more](https://ipgeolocation.io/timezone-api.html#reference-to-time-zone-api-response)
+- **Outputs:** time_zone.name, time_zone.current_time, time_zone.date_time_wti and [more](https://ipgeolocation.io/documentation/timezone-api.html#reference-to-time-zone-api-response)
 
 ![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/timezone-v3.png)
 
@@ -290,7 +290,7 @@ Converts a time from one of following options
 - Convert Time using ICAO codes
 - Convert Time using UN/LOCODEs
 
-**Output:** Converted [date/time](https://ipgeolocation.io/timezone-api.html#reference-to-time-conversion-api-response)
+**Output:** Converted [date/time](https://ipgeolocation.io/documentation/timezone-api.html#reference-to-time-conversion-api-response)
 
 ![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/time-conversion.png)
 
@@ -300,7 +300,7 @@ Provides timings for sunrise, sunset, moonrise, moonset, sun azimuth, moon azimu
 
 #### **Get Astronomy Details**
 
-- **Outputs:** astronomy.sunrise, astronomy.sunset, astronomy.moon_phase and [many more.](https://ipgeolocation.io/astronomy-api.html#reference-to-astronomy-api-response)
+- **Outputs:** astronomy.sunrise, astronomy.sunset, astronomy.moon_phase and [many more.](https://ipgeolocation.io/documentation/astronomy-api.html#reference-to-astronomy-api-response)
 
 ![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/astronomy.png)
 
@@ -317,7 +317,7 @@ Provides detailed client system information, allowing for the detection of bots,
 #### **Parse User Agent String**
 
 - **Input:** User agent string
-- **Outputs:** provides name, device and operating sysem [information](https://ipgeolocation.io/user-agent-api.html#reference-to-user-agent-api-response).
+- **Outputs:** provides name, device and operating sysem [information](https://ipgeolocation.io/documentation/user-agent-api.html#reference-to-user-agent-api-response).
 
 ![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/user-agent.png)
 
