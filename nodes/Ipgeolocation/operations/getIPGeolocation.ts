@@ -26,7 +26,7 @@ export const getIPGeolocation: INodeProperties[] = [
 	{
 		displayName: 'Include',
 		name: 'ipGeolocationInclude',
-		type: 'options',
+		type: 'multiOptions',
 		options: [
 			{ name: 'Abuse', value: 'abuse' },
 			{ name: 'All', value: 'all' },
@@ -35,9 +35,6 @@ export const getIPGeolocation: INodeProperties[] = [
 			{ name: 'Security', value: 'security' },
 			{ name: 'User Agent', value: 'user_agent' },
 		],
-		typeOptions: {
-			multipleValues: true,
-		},
 		default: ['all'],
 		hint: 'Select the information to include in the response (Paid Plan)',
 		displayOptions: {

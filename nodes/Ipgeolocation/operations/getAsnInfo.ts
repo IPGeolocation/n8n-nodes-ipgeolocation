@@ -70,7 +70,7 @@ export const getAsnInfo: INodeProperties[] = [
 	{
 		displayName: 'Include',
 		name: 'ASNInclude',
-		type: 'options',
+		type: 'multiOptions',
 		options: [
 			{ name: 'All', value: 'all' },
 			{ name: 'Downstreams', value: 'downstreams' },
@@ -79,9 +79,6 @@ export const getAsnInfo: INodeProperties[] = [
 			{ name: 'Upstreams', value: 'upstreams' },
 			{ name: 'Whois Response', value: 'whois_response' },
 		],
-		typeOptions: {
-			multipleValues: true,
-		},
 		default: ['all'],
 		hint: 'Select the information to include in the response',
 		displayOptions: {
