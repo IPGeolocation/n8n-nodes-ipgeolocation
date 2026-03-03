@@ -82,7 +82,7 @@ export const getAsnInfo: INodeProperties[] = [
 		typeOptions: {
 			multipleValues: true,
 		},
-		default: 'all',
+		default: ['all'],
 		hint: 'Select the information to include in the response',
 		displayOptions: {
 			show: {
