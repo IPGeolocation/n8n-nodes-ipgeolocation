@@ -179,12 +179,10 @@ To use IPGeolocation.io with **n8n**, you need a valid **API Key**. Follow these
 
 ## Actions Availability across our Plans
 
-We offer **four API plans**: **Developer**, **Standard**, **Security**, and **Advanced**.
-
 The availability of actions depends on the plan you are subscribed to. The following table provides a detailed overview of which actions are included in each plan, helping you quickly identify the plan that suits your needs.
 
 | **Action** | **Developer** | **Paid** |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- |
 | **Get IP Geolocation** | ✔ | ✔ |
 | **Get Bulk IP Geolocation** | ✖ | ✔ |
 | **Get IP Security** | ✖ | ✔ |
@@ -197,7 +195,6 @@ The availability of actions depends on the plan you are subscribed to. The follo
 | **Get Time Conversion** | ✔ | ✔ |
 | **Get User Agent Info** | ✖ | ✔ |
 | **Get Bulk User Agents Info** | ✖ | ✔ |
-
 
 For full pricing details and to choose your plan, see the [pricing page](https://ipgeolocation.io/pricing.html).
 
@@ -223,7 +220,7 @@ Retrieves geolocation for up to 50,000 IPs per request.
 - **Input:** Array of IPs
 - **Outputs:** Collection of geolocation objects
 
-![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/ip-geolocation.png)
+![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/ip-geolocation-v3.png)
 
 ### **Security**
 
@@ -241,7 +238,7 @@ Security assessment for multiple IPs.
 - **Input:** Array of IPs
 - **Outputs:** Collection of [security data](https://ipgeolocation.io/documentation/ip-security-api.html#security-json-object-reference)
 
-![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/ip-security.png)
+![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/ip-security-v3.png)
 
 ### **Network Intelligence**
 
@@ -252,7 +249,7 @@ Provides a simple way to retrieve accurate information about an Autonomous Syste
 - **Input:** IP or ASN number
 - **Outputs:** asn.as_number, asn.organization and [more](https://ipgeolocation.io/documentation/asn-api.html#reference-to-asn-api-response)
 
-![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/asn.png)
+![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/asn-v3.png)
 
 #### **Lookup Abuse Contact Information**
 
@@ -261,7 +258,7 @@ Includes details such as the role, handle, organization name, kind (e.g., group 
 - **Input:** IP Address
 - **Outputs:** abuse.emails, abuse.handle and [more](https://ipgeolocation.io/ip-abuse-contact-api.html#reference-to-abuse-contact-api-response)
 
-![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/abuse.png)
+![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/abuse-v3.png)
 
 ### **Time Services**
 
@@ -280,7 +277,7 @@ It can be consumed with the following input variations:
 - For any UN/LO Code
 - **Outputs:** time_zone.name, time_zone.current_time, time_zone.date_time_wti and [more](https://ipgeolocation.io/timezone-api.html#reference-to-time-zone-api-response)
 
-![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/timezone.png)
+![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/timezone-v3.png)
 
 #### **Time Conversion**
 
