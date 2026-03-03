@@ -2,7 +2,7 @@
 
 ## Overview
 
-The n8n+IPGeolocation integration makes it simple to use the full [**IPGeolocation.io**](https://ipgeolocation.io) APIs inside your n8n automation workflows. You do not need to write code or handle API requests because everything can be automated through clear and simple actions.
+The n8n+IPGeolocation integration makes it simple to use the full [**IPGeolocation.io v3**](https://ipgeolocation.io) APIs inside your n8n automation workflows. You do not need to write code or handle API requests because everything can be automated through clear and simple actions.
 
 With this integration, you can quickly get helpful information about any IP address. This includes location details, network ownership, security risk information, user agent data, time zone details, and even basic astronomy information. You can use this data to improve your workflows, personalize user experiences, and make your automation more secure.
 
@@ -18,7 +18,36 @@ It allows you to automate retrieval of:
 ---
 
 ## IPGeolocation Node Installation Guide 
-### Community Nodes (Recommended)
+### Installing IPGeolocation Node via n8n Editor (Recommended)
+
+Since the IPGeolocation node is verified by n8n, you can easily find and install it directly from the n8n Editor without any manual setup.
+
+#### Steps to Install from n8n Editor
+
+**1. Open n8n Editor**
+
+Log in to your n8n instance (Cloud or Self-Hosted).
+
+**2. Open Nodes Panel**
+
+Click on the **“+” (Add node)** button.
+
+**3. Search for the Node**
+
+In the search bar, type **IPGeolocation**.  
+Because the node is verified, it will appear directly in the search results.
+
+**4. Install the Node**
+
+Click on the **IPGeolocation** node.  
+n8n will automatically install and enable it.
+
+**5. Start Using the Node**
+
+Once installed, the node is ready to be used in your workflows.
+
+
+### Community Nodes
 For users on n8n v0.187+, your instance owner can install this node from Community Nodes.
 
 1. Go to **Settings > Community Nodes**.
@@ -67,7 +96,7 @@ npm init -y
 #### Install the official IPGeolocation.io n8n node
 
 ``` bash
-npm install n8n-nodes-ipgeolocation@1.0.0
+npm install n8n-nodes-ipgeolocation@latest
 ```
 
 This [npm package](https://www.npmjs.com/package/n8n-nodes-ipgeolocation) is the official IPGeolocation.io integration for n8n,
@@ -110,7 +139,7 @@ To use IPGeolocation.io with **n8n**, you need a valid **API Key**. Follow these
 ### Obtain your API Key
 
 - After logging in, go to your [**dashboard**](https://app.ipgeolocation.io/dashboard).
-- Copy your **API Key** — you’ll need it to connect Make with IPGeolocation.io.
+- Copy your **API Key** — you’ll need it to connect n8n with IPGeolocation.io.
 
 ### Open n8n and create a scenario
 
@@ -154,24 +183,21 @@ We offer **four API plans**: **Developer**, **Standard**, **Security**, and **Ad
 
 The availability of actions depends on the plan you are subscribed to. The following table provides a detailed overview of which actions are included in each plan, helping you quickly identify the plan that suits your needs.
 
-| **Action** | **Developer** | **Standard** | **Security** | **Advance** |
+| **Action** | **Developer** | **Paid** |
 | --- | --- | --- | --- | --- |
-| **Get IP Geolocation** | ✔ | ✔ | ✖ | ✔ |
-| **Get Bulk IP Geolocation** | ✖ | ✔ | ✖ | ✔ |
-| **Get IP Security** | ✖ | ✖ | ✔ | ✖ |
-| **Get Bulk IP Security** | ✖ | ✖ | ✔ | ✖ |
-| **Get ASN Info** | ✖ | ✖ | ✖ | ✔ |
-| **Get Abuse Contact Info** | ✖ | ✖ | ✖ | ✔ |
-| **Get Astronomy Info** | ✔ | ✔ | ✔ | ✔ |
-| **Get Astronomy Timeseries Information** | ✔ | ✔ | ✔ | ✔ |
-| **Get Timezone Info** | ✔ | ✔ | ✔ | ✔ |
-| **Get Time Conversion** | ✔ | ✔ | ✔ | ✔ |
-| **Get User Agent Info** | ✖ | ✔ | ✔ | ✔ |
-| **Get Bulk User Agents Info** | ✖ | ✔ | ✔ | ✔ |
+| **Get IP Geolocation** | ✔ | ✔ |
+| **Get Bulk IP Geolocation** | ✖ | ✔ |
+| **Get IP Security** | ✖ | ✔ |
+| **Get Bulk IP Security** | ✖ | ✔ |
+| **Get ASN Info** | ✖ | ✔ |
+| **Get Abuse Contact Info** | ✖ | ✔ |
+| **Get Astronomy Info** | ✔ | ✔ |
+| **Get Astronomy Timeseries Information** | ✔ | ✔ |
+| **Get Timezone Info** | ✔ | ✔ |
+| **Get Time Conversion** | ✔ | ✔ |
+| **Get User Agent Info** | ✖ | ✔ |
+| **Get Bulk User Agents Info** | ✖ | ✔ |
 
-If you attempt to use **Security-related actions** (for example, **IP Security Lookup**) with an API key from the **Standard plan**, the request will **fail** because these actions are **exclusive to the Security plan**. The API will return an **error message** indicating unauthorized access.
-
-![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/unauthorized-operation.png)
 
 For full pricing details and to choose your plan, see the [pricing page](https://ipgeolocation.io/pricing.html).
 
@@ -188,7 +214,7 @@ Below is a structured reference of all modules in this integration.
 Retrieves full geolocation data of a single IPv4/IPv6.
 
 - **Input:** IP Address
-- **Outputs:** country_name, city, latitude, longitude and [many more](https://ipgeolocation.io/ip-location-api.html#2-location-json-object-reference)
+- **Outputs:** country_name, city, latitude, longitude and [many more](https://ipgeolocation.io/documentation/ip-location-api.html#location-json-object-reference)
 
 #### **Get Bulk IP Geolocation**
 
@@ -206,14 +232,14 @@ Retrieves geolocation for up to 50,000 IPs per request.
 Security insights such as proxy, VPN, TOR, threat score, cloud and proxy providers.
 
 - **Input:** IP Address
-- **Outputs:** security.is_proxy, security.is_vpn, security.threat_score, security.is_cloud_provider and [more](https://ipgeolocation.io/ip-security-api.html#2-security-json-object-reference)
+- **Outputs:** security.is_proxy, security.is_vpn, security.threat_score, security.is_cloud_provider and [more](https://ipgeolocation.io/documentation/ip-security-api.html#security-json-object-reference)
 
 #### **Bulk IP Security Lookup**
 
 Security assessment for multiple IPs.
 
 - **Input:** Array of IPs
-- **Outputs:** Collection of [security data](https://ipgeolocation.io/ip-security-api.html#2-security-json-object-reference)
+- **Outputs:** Collection of [security data](https://ipgeolocation.io/documentation/ip-security-api.html#security-json-object-reference)
 
 ![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/ip-security.png)
 
@@ -224,7 +250,7 @@ Security assessment for multiple IPs.
 Provides a simple way to retrieve accurate information about an Autonomous System Number (ASN) and its associated IPv4 and IPv6 address ranges.
 
 - **Input:** IP or ASN number
-- **Outputs:** asn.as_number, asn.organization and [more](https://ipgeolocation.io/asn-api.html#reference-to-asn-api-response)
+- **Outputs:** asn.as_number, asn.organization and [more](https://ipgeolocation.io/documentation/asn-api.html#reference-to-asn-api-response)
 
 ![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/asn.png)
 
