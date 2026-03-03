@@ -59,7 +59,7 @@ export const getBulkIPGeolocation: INodeProperties[] = [
 		typeOptions: {
 			multipleValues: true,
 		},
-		default: 'abuse',
+		default: ['all'],
 		hint: 'Select the information to include in the response (Paid Plan)',
 		displayOptions: {
 			show: {
