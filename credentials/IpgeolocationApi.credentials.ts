@@ -41,8 +41,12 @@ export class IpgeolocationApi implements ICredentialType {
 
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: 'https://billing.ipgeolocation.io',
-			url: '/subscription/isApiKeyValid',
+			baseURL: 'https://api.ipgeolocation.io',
+			url: '/v3/ipgeo',
+			qs: {
+				apiKey: '={{$credentials.apiKey}}',
+				ip: '8.8.8.8',
+			}
 		},
 	};
 }
