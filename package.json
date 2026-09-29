@@ -50,5 +50,20 @@
   },
   "peerDependencies": {
     "n8n-workflow": "*"
+  },
+  "overrides": {
+    "handlebars": "4.7.9",
+    "n8n-workflow": {
+      "form-data": "4.0.6",
+      "lodash": "4.18.1"
+    },
+    "release-it": {
+      "undici": "^6.28.0"
+    },
+    "eslint-plugin-n8n-nodes-base": {
+      "@typescript-eslint/typescript-estree": {
+        "minimatch": "^9.0.7"
+      }
+    }
   }
 }
