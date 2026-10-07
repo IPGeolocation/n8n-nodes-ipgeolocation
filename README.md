@@ -52,7 +52,7 @@ For users on n8n v0.187+, your instance owner can install this node from Communi
 
 1. Go to **Settings > Community Nodes**.
 2. Select **Install**.
-3. Enter `n8n-nodes-ipgeolocation` in Enter npm package name.
+3. Enter `n8n-nodes-ipgeolocation` in the "Enter npm package name".
 4. Agree to the risks of using community nodes: select I understand the risks of installing unverified code from a public source.
 5. Select **Install**.
 
@@ -208,7 +208,7 @@ Below is a structured reference of all modules in this integration.
 
 #### **Get IP Geolocation**
 
-Retrieves full geolocation data of a single IPv4/IPv6.
+Retrieves full geolocation data of a single IPv4/IPv6 address.
 
 - **Input:** IP Address
 - **Outputs:** country_name, city, latitude, longitude and [many more](https://ipgeolocation.io/documentation/ip-location-api.html#location-json-object-reference)
@@ -262,7 +262,7 @@ Includes details such as the role, handle, organization name, kind (e.g., group 
 
 ### **Time Services**
 
-The free **Time Zone API** and **Time Conversion API** provide date and time related information such as current time, date in various formats, week, month, year, Unix timestamps, UTC/GMT offset and daylight saving time from timezone name, any IPv4 or IPv6 address or geolocation coordinates, IATA code, ICAO code, or UN/LOCODE.
+The free **Time Zone API** and **Time Conversion API** provide date and time-related information such as current time, date in various formats, week, month, year, Unix timestamps, UTC/GMT offset and daylight saving time from a timezone name, any IPv4 or IPv6 address or geolocation coordinates, IATA code, ICAO code, or UN/LOCODE.
 
 #### **Get Timezone Info**
 
@@ -281,7 +281,7 @@ It can be consumed with the following input variations:
 
 #### **Time Conversion**
 
-Converts a time from one of following options
+Converts a time from one of the following options
 
 - Convert Time using Time Zone Names
 - Convert Time using Location
@@ -296,7 +296,7 @@ Converts a time from one of following options
 
 ### **Astronomy**
 
-Provides timings for sunrise, sunset, moonrise, moonset, sun azimuth, moon azimuth, sun altitude, moon altitude, sun distance from the earth and moon distance from the earth.
+Provides timings for sunrise, sunset, moonrise, moonset, sun azimuth, moon azimuth, sun altitude, moon altitude, sun distance from the earth and moon distance from the Earth.
 
 #### **Get Astronomy Details**
 
@@ -340,10 +340,10 @@ Some of the use cases are provided as following.
 
 **Scenario:** Validate order IPs before processing.
 
-- Trigger: Shopify/WooCommerce detects new order.
-- Step 1: Security Lookup: Check proxy/VPN.
+- Trigger: Shopify/WooCommerce detects a new order.
+- Step 1: Security Lookup: Check for proxy/VPN.
 - Step 2: ASN Lookup:  Find ISP & organization.
-- Filter: Only proceed if *not* proxy AND not cloud provider.
+- Filter: Only proceed if *not* a proxy AND not a cloud provider.
 - If high-risk: Tag the order “Fraud Review”
 
 ---
@@ -379,7 +379,7 @@ Some of the use cases are provided as following.
 
 **Modules:** Astronomy Details, Astronomy Time Series
 
-**Scenario:** Automate IoT actions based on sunrise, sunset, moon phase.
+**Scenario:** Automate IoT actions based on sunrise, sunset, and moon phase.
 
 - Daily schedule at midnight.
 - Astronomy Details: Get sunrise & moon phase.
