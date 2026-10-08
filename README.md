@@ -269,8 +269,8 @@ The free **Time Zone API** and **Time Conversion API** provide date and time-rel
 It can be consumed with the following input variations:
 
 - For a Time Zone Name
-- For any Address (preferably, city address)
-- For Location Coordinates (latitude & longitude)
+- For any Address (preferably a city address)
+- For any location coordinates (latitude & longitude)
 - For any IP address
 - For any IATA code
 - For any ICAO code
@@ -317,7 +317,7 @@ Provides detailed client system information, allowing for the detection of bots,
 #### **Parse User Agent String**
 
 - **Input:** User agent string
-- **Outputs:** provides name, device and operating sysem [information](https://ipgeolocation.io/documentation/user-agent-api.html#reference-to-user-agent-api-response).
+- **Outputs:** provides name, device and operating system [information](https://ipgeolocation.io/documentation/user-agent-api.html#reference-to-user-agent-api-response).
 
 ![](https://static.ipgeolocation.io/web-assets/images/integrations/n8n/user-agent.png)
 
@@ -332,7 +332,7 @@ Provides detailed client system information, allowing for the detection of bots,
 
 ## Use Cases
 
-Some of the use cases are provided as following.
+Some of the use cases are provided as follows.
 
 ### **E‑commerce Fraud & Network Vetting**
 
