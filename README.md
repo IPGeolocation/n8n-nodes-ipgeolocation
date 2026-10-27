@@ -181,7 +181,7 @@ To use IPGeolocation.io with **n8n**, you need a valid **API Key**. Follow these
 
 The availability of actions depends on the plan you are subscribed to. The following table provides a detailed overview of which actions are included in each plan, helping you quickly identify the plan that suits your needs.
 
-| **Action** | **Developer** | **Paid** |
+| **Action** | **Free** | **Paid** |
 | --- | --- | --- |
 | **Get IP Geolocation** | ✔ | ✔ |
 | **Get Bulk IP Geolocation** | ✖ | ✔ |
