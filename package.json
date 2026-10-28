@@ -24,6 +24,8 @@
     "dev": "n8n-node dev",
     "lint": "n8n-node lint",
     "lint:fix": "n8n-node lint --fix",
+    "test": "node --test tests/*.test.cjs",
+    "audit:security": "node scripts/audit.cjs",
     "release": "n8n-node release",
     "prepublishOnly": "n8n-node prerelease"
   },
@@ -41,33 +43,29 @@
     ]
   },
   "devDependencies": {
-    "@n8n/node-cli": "*",
-    "@opentelemetry/instrumentation": "^0.212.0",
+    "@n8n/node-cli": "0.20.0",
     "eslint": "9.32.0",
     "prettier": "3.6.2",
-    "release-it": "^19.0.4",
+    "release-it": "^19.2.4",
     "typescript": "5.9.2"
   },
   "peerDependencies": {
     "n8n-workflow": "*"
   },
   "overrides": {
-    "handlebars": "4.7.9",
+    "handlebars": "4.7.10",
     "n8n-workflow": {
       "form-data": "4.0.6",
       "lodash": "4.18.1"
     },
     "release-it": {
-      "undici": "^6.28.0"
+      "undici": "^6.29.1"
     },
+    "basic-ftp": "^6.2.1",
     "eslint-plugin-n8n-nodes-base": {
       "@typescript-eslint/typescript-estree": {
         "minimatch": "^9.0.7"
       }
-    },
-    "@langchain/community": "1.1.18",
-    "langsmith": "^0.10.5",
-    "uuid": "^11.1.1",
-    "@langchain/core": "1.2.13"
+    }
   }
 }
