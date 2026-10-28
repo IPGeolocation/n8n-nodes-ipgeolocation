@@ -6,6 +6,7 @@ function isHostZodFinding(name, finding) {
 	// shortcut: accept only n8n's Zod 3 advisory until a compatible fix is available.
 	// https://github.com/colinhacks/zod/issues/6653
 	return (
+		finding.severity === 'high' &&
 		finding.nodes.length === 1 &&
 		finding.nodes[0] === `node_modules/${name}` &&
 		finding.via.length === 1 &&
@@ -15,7 +16,13 @@ function isHostZodFinding(name, finding) {
 }
 
 function checkAudit(report) {
-	if (report.error || !report.metadata || !report.vulnerabilities) {
+	if (
+		report.error ||
+		!Number.isInteger(report.metadata?.vulnerabilities?.total) ||
+		!report.vulnerabilities ||
+		Array.isArray(report.vulnerabilities) ||
+		report.metadata.vulnerabilities.total !== Object.keys(report.vulnerabilities).length
+	) {
 		throw new Error('npm audit did not return a complete report');
 	}
 	return Object.entries(report.vulnerabilities).filter(
