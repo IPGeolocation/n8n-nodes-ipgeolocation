@@ -2,7 +2,7 @@
 
 ## Overview
 
-The n8n+IPGeolocation integration makes it simple to use the full [**IPGeolocation.io v3**](https://ipgeolocation.io) APIs inside your n8n automation workflows. You do not need to write code or handle API requests because everything can be automated through clear and simple actions.
+The n8n + IPGeolocation.io integration makes it simple to use the full [**IPGeolocation.io v3**](https://ipgeolocation.io) APIs inside your n8n automation workflows. You do not need to write code or handle API requests because everything can be automated through clear and simple actions.
 
 With this integration, you can quickly get helpful information about any IP address. This includes location details, network ownership, security risk information, user agent data, time zone details, and even basic astronomy information. You can use this data to improve your workflows, personalize user experiences, and make your automation more secure.
 
