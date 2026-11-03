@@ -41,3 +41,31 @@ test('an incomplete or failed audit fails the check', () => {
 	assert.throws(() => checkAudit({ metadata: {}, vulnerabilities: {} }), /complete report/);
 	assert.throws(() => checkAudit({ metadata: { vulnerabilities: { total: 1 } }, vulnerabilities: {} }), /complete report/);
 });
+
+const minimatchAdvisory = { name: 'minimatch', severity: 'moderate', url: 'https://github.com/advisories/GHSA-g3hv-75wg-m249' };
+const devLock = { packages: { 'node_modules/minimatch': { dev: true }, 'node_modules/eslint': { dev: true } } };
+const devFindings = {
+	minimatch: { severity: 'moderate', nodes: ['node_modules/minimatch'], via: [minimatchAdvisory] },
+	eslint: { severity: 'moderate', nodes: ['node_modules/eslint'], via: ['minimatch'] },
+};
+const beforeReview = new Date('2026-11-03T00:00:00Z');
+
+test('a known dev-tool advisory is accepted before its review date', () => {
+	assert.deepEqual(checkAudit(report(devFindings), devLock, beforeReview), []);
+});
+
+test('a known dev-tool advisory fails once a shipped dependency is affected', () => {
+	const shipped = { packages: { ...devLock.packages, 'node_modules/minimatch': {} } };
+	assert.equal(checkAudit(report(devFindings), shipped, beforeReview).length, 2);
+});
+
+test('a known dev-tool advisory fails after its review date', () => {
+	assert.equal(checkAudit(report(devFindings), devLock, new Date('2027-02-02T00:00:00Z')).length, 2);
+});
+
+test('a new or escalated advisory on a dev tool fails the check', () => {
+	const withVia = (via) => report({ minimatch: { ...devFindings.minimatch, via: [via] } });
+	assert.equal(checkAudit(withVia({ ...minimatchAdvisory, url: 'https://github.com/advisories/new' }), devLock, beforeReview).length, 1);
+	assert.equal(checkAudit(withVia({ ...minimatchAdvisory, severity: 'high' }), devLock, beforeReview).length, 1);
+	assert.equal(checkAudit(withVia({ ...minimatchAdvisory, name: 'glob' }), devLock, beforeReview).length, 1);
+});
