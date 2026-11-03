@@ -32,7 +32,8 @@ function checkAudit(report) {
 
 if (require.main === module) {
 	try {
-		const result = spawnSync(process.platform === 'win32' ? 'npm.cmd' : 'npm', ['audit', '--json'], {
+		// Only what ships: dev tools (eslint, node-cli) are not installed with the node.
+		const result = spawnSync(process.platform === 'win32' ? 'npm.cmd' : 'npm', ['audit', '--omit=dev', '--json'], {
 			encoding: 'utf8',
 		});
 		if (result.error || ![0, 1].includes(result.status)) {
