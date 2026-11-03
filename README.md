@@ -100,7 +100,7 @@ npm install n8n-nodes-ipgeolocation@latest
 ```
 
 This [npm package](https://www.npmjs.com/package/n8n-nodes-ipgeolocation) is the official IPGeolocation.io integration for n8n,
-enabling powerful IP lookup, timezone, geolocation, and security data
+enabling powerful IP lookup, time zone, geolocation, and security data
 directly inside your workflows.
 
 #### Restart n8n
@@ -120,7 +120,7 @@ n8n will automatically load all custom nodes located in the
 You can now use the **IPGeolocation.io** node inside n8n to:
 
 -   Retrieve IP Geolocation data
--   Detect timezone information
+-   Detect time zone information
 -   Perform IP Security checks
 -   Enrich workflows with location-based intelligence
 
@@ -262,7 +262,7 @@ Includes details such as the role, handle, organization name, kind (e.g., group 
 
 ### **Time Services**
 
-The free **Time Zone API** and **Time Conversion API** provide date and time-related information such as current time, date in various formats, week, month, year, Unix timestamps, UTC/GMT offset and daylight saving time from a timezone name, any IPv4 or IPv6 address or geolocation coordinates, IATA code, ICAO code, or UN/LOCODE.
+The free **Time Zone API** and **Time Conversion API** provide date and time-related information such as current time, date in various formats, week, month, year, Unix timestamps, UTC/GMT offset and daylight saving time from a time zone name, any IPv4 or IPv6 address or geolocation coordinates, IATA code, ICAO code, or UN/LOCODE.
 
 #### **Get Timezone Info**
 
@@ -355,7 +355,7 @@ Some of the use cases are provided as follows.
 **Scenario:** Send newsletter at **10 AM local time**.
 
 - Step 1: Geolocation: Get currency + country.
-- Step 2: Timezone Info: Get exact timezone.
+- Step 2: Timezone Info: Get exact time zone.
 - Step 3: Time Conversion: Convert 10:00 on the intended send date from the recipient's IANA time zone to the scheduler's time zone (UTC in this example).
 - Step 4: Email tool: Schedule the message for that converted time.
 
