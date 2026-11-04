@@ -1,6 +1,7 @@
 const { spawnSync } = require('node:child_process');
 
 const hostAdvisory = 'https://github.com/advisories/GHSA-mrhx-c7xc-m3w5';
+const hostReview = '2027-02-01';
 
 // Dev-tool advisories with no upstream fix yet (eslint, @eslint/eslintrc and @n8n/node-cli still need
 // minimatch below 11.0.1). Accepted only while every affected copy is a dev dependency, and only until
@@ -10,10 +11,11 @@ const devAdvisories = {
 	'https://github.com/advisories/GHSA-g3hv-75wg-m249': { name: 'minimatch', severity: 'moderate', review: '2027-02-01' },
 };
 
-function isHostZodFinding(name, finding) {
-	// shortcut: accept only n8n's Zod 3 advisory until a compatible fix is available.
-	// https://github.com/colinhacks/zod/issues/6653
+function isHostZodFinding(name, finding, today = new Date()) {
+	// shortcut: accept only n8n's Zod 3 advisory until a compatible fix is available, and only until the
+	// review date. https://github.com/colinhacks/zod/issues/6653
 	return (
+		today <= new Date(`${hostReview}T23:59:59Z`) &&
 		finding.severity === 'high' &&
 		finding.nodes.length === 1 &&
 		finding.nodes[0] === `node_modules/${name}` &&
@@ -27,12 +29,13 @@ function isDevAdvisoryFinding(name, report, lock, today, seen = new Set()) {
 	if (seen.has(name)) return true; // already checked, or a dependency cycle
 	seen.add(name);
 	const finding = report.vulnerabilities[name];
-	if (!finding?.via?.length || !finding.nodes.every((node) => lock.packages?.[node]?.dev === true)) return false;
+	if (!finding?.via?.length || !finding.nodes?.length || !finding.nodes.every((node) => lock.packages?.[node]?.dev === true)) return false;
 	return finding.via.every((via) => {
 		if (typeof via === 'string') return isDevAdvisoryFinding(via, report, lock, today, seen);
 		const accepted = devAdvisories[via.url];
 		return (
-			accepted?.name === via.name &&
+			accepted !== undefined &&
+			accepted.name === via.name &&
 			accepted.severity === via.severity &&
 			today <= new Date(`${accepted.review}T23:59:59Z`)
 		);
@@ -50,7 +53,7 @@ function checkAudit(report, lock = {}, today = new Date()) {
 		throw new Error('npm audit did not return a complete report');
 	}
 	return Object.entries(report.vulnerabilities).filter(
-		([name, finding]) => !isHostZodFinding(name, finding) && !isDevAdvisoryFinding(name, report, lock, today),
+		([name, finding]) => !isHostZodFinding(name, finding, today) && !isDevAdvisoryFinding(name, report, lock, today),
 	);
 }
 
