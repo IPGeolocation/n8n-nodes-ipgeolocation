@@ -69,3 +69,21 @@ test('a new or escalated advisory on a dev tool fails the check', () => {
 	assert.equal(checkAudit(withVia({ ...minimatchAdvisory, severity: 'high' }), devLock, beforeReview).length, 1);
 	assert.equal(checkAudit(withVia({ ...minimatchAdvisory, name: 'glob' }), devLock, beforeReview).length, 1);
 });
+
+test('the host Zod advisory fails after its review date', () => {
+	const zodReport = report({ zod: finding('zod', [{ url: advisory }]) });
+	assert.deepEqual(checkAudit(zodReport, {}, beforeReview), []);
+	assert.equal(checkAudit(zodReport, {}, new Date('2027-02-02T00:00:00Z')).length, 1);
+});
+
+test('a dependency cycle or an empty finding does not hide an advisory', () => {
+	const cycle = report({
+		...devFindings,
+		eslint: { ...devFindings.eslint, via: ['minimatch', 'plugin'] },
+		plugin: { severity: 'moderate', nodes: ['node_modules/plugin'], via: ['eslint', { url: 'https://github.com/advisories/new', severity: 'moderate', name: 'plugin' }] },
+	});
+	const lock = { packages: { ...devLock.packages, 'node_modules/plugin': { dev: true } } };
+	assert.deepEqual(checkAudit(cycle, lock, beforeReview).map(([name]) => name).sort(), ['eslint', 'plugin']);
+	assert.equal(checkAudit(report({ minimatch: { ...devFindings.minimatch, nodes: [] } }), devLock, beforeReview).length, 1);
+	assert.equal(checkAudit(report({ minimatch: { ...devFindings.minimatch, via: [{ severity: 'moderate' }] } }), devLock, beforeReview).length, 1);
+});

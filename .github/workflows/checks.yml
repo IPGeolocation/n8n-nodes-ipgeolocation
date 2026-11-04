@@ -4,6 +4,8 @@ on:
   pull_request:
   push:
     branches: [main]
+  schedule:
+    - cron: '0 6 * * 1' # weekly, so new advisories and expired exceptions show up without a push
 
 permissions:
   contents: read
