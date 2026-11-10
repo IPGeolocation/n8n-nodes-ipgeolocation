@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.0.1]
+
+- Check saved API keys with the IP Geolocation API.
+- Update the tools used to build and test the node.
+
 ## [2.0.0] — Targeting IPGeolocation.io v3 APIs
 
 ### Changed

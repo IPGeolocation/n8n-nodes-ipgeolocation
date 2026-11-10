@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-ipgeolocation",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Integrate ipgeolocation.io with n8n to automate IP lookup, geolocation, timezone data, and security checks for powerful workflow enrichment.",
   "license": "MIT",
   "homepage": "",
@@ -62,10 +62,7 @@
       "undici": "^6.29.1"
     },
     "basic-ftp": "^6.2.1",
-    "eslint-plugin-n8n-nodes-base": {
-      "@typescript-eslint/typescript-estree": {
-        "minimatch": "^9.0.7"
-      }
-    }
+    "rimraf@6.0.1": "6.1.4",
+    "minimatch@>=7 <11.0.1": "11.0.5"
   }
 }
