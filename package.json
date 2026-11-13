@@ -61,7 +61,7 @@
     "release-it": {
       "undici": "^6.29.1"
     },
-    "basic-ftp": "^6.2.1",
+    "basic-ftp": "^6.2.6",
     "rimraf@6.0.1": "6.1.4",
     "minimatch@>=7 <11.0.1": "11.0.5"
   }
